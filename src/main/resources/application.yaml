@@ -1,0 +1,27 @@
+server:
+  port: 8989
+  context-path: /demo
+
+
+  jsp-servlet:
+    init-parameters:
+      development: true
+
+spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.baizhi.entity
+
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql

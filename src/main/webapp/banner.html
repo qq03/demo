@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <%--引入css样式--%>
+    <link rel="stylesheet" href="./static/boot/css/bootstrap.min.css">
+    <%--引入jqgrid 主题css--%>
+    <link rel="stylesheet" href="./static/jqgrid/css/trirand/ui.jqgrid-bootstrap-ui.css">
+    <%--引入js文件--%>
+    <script src="./static/boot/js/jquery-3.3.1.min.js"></script>
+    <script src="./static/boot/js/bootstrap.min.js"></script>
+    <script src="./static/jqgrid/js/trirand/i18n/grid.locale-cn.js"></script>
+    <script src="./static/jqgrid/js/trirand/jquery.jqGrid.min.js"></script>
+    <script>
+        $(function () {
+
+            $("#emplist").jqGrid({
+                caption: "用户列表",
+
+                styleUI: 'Bootstrap',//使用bootstrap风格样式
+                datatype: "json",
+                autowidth: true,
+                pager: "#pager",
+                viewrecords: true,
+                rowNum: 2,
+                toolbar: ['true', 'top'],
+
+                colNames: ["id", "姓名", "年龄", "生日", "所属部门", "操作"],
+                colModel: [
+                    {name: "id"},
+                    {name: "name", editable: true},
+                    {name: "age", editable: true},
+                    {name: "bir", editable: true},
+                    {name: "dept.id", editable: true},
+                    {name: "options"}
+                ],
+            })
+        })
+
+    </script>
+</head>
+<body>
+<!--导航条-->
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <p class="navbar-text">持明法洲后台管理系统</p>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><p class="navbar-text">您好：<span style="color: #2b669a">张三</span></p></li>
+            <li>
+                <a href="#" class="navbar-link">退出登录
+                    <span class="glyphicon glyphicon-share"></span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="col-sm-2 " >
+    <!--左侧-->
+    <!--创建手风琴实例-->
+    <div class="panel-group" id="panelgroup">
+
+        <!--创建面板-->
+        <div class="panel panel-default ">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <!--使用连接完成折叠效果-->
+                    <a href="#pic" data-toggle="collapse" data-parent="#panelgroup" id="qqqq" ><strong>轮播图模块</strong></a>
+                </div>
+            </div>
+            <div class="panel-collapse collapse" id="pic">
+                <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="">轮播图列表</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <!--创建另一个面板-->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <!--使用连接完成折叠效果-->
+                    <a href="#special" data-toggle="collapse" data-parent="#panelgroup" ><strong>专辑模块</strong></a>
+                </div>
+            </div>
+            <div class="panel-collapse collapse" id="special">
+                <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="" >专辑管理</a></li>
+                        <li><a href="" >章节管理</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--创建另一个面板-->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <!--使用连接完成折叠效果-->
+                    <a href="#doc" data-toggle="collapse" data-parent="#panelgroup" ><strong>文章模块</strong></a>
+                </div>
+            </div>
+            <div class="panel-collapse collapse" id="doc">
+                <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="" >文章管理</a></li>
+                        <li><a href="" >上师管理</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <!--创建另一个面板-->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <!--使用连接完成折叠效果-->
+                    <a href="#user" data-toggle="collapse" data-parent="#panelgroup" ><strong>用户模块</strong></a>
+                </div>
+            </div>
+
+            <div class="panel-collapse collapse" id="user">
+                <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="" >用户管理</a></li>
+                        <li><a href="" >用户图表展示</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <!--创建另一个面板-->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    <!--使用连接完成折叠效果-->
+                    <a href="#note" data-toggle="collapse" data-parent="#panelgroup" ><strong>日志模块</strong></a>
+                </div>
+            </div>
+
+            <div class="panel-collapse collapse" id="note">
+                <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="" >日志管理</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--右侧-->
+<div class="col-sm-10" id="centerLayout">
+    <!--首页介绍-->
+        <div class="page-header">
+            <h3>轮播图管理</h3>
+        </div>
+    <ul class="nav nav-pills">
+        <li class="active"><a href="#list" data-toggle="tab">轮播图列表</a></li>
+        <li ><a href="#a" data-toggle="tab"  >轮播图添加</a></li>
+    </ul>
+    <!--标签内容组-->
+    <div class="tab-content">
+        <!--标签内容面板-->
+        <div class="tab-pane active" id="list">
+             <table id="piclist" class="table-striped"></table>
+            <!--准备分页-->
+            <div id="pager"></div>
+        </div>
+        <div class="tab-pane active" id="a">
+            <h3>asf2</h3>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
